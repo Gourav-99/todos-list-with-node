@@ -1,0 +1,32 @@
+{
+  "name": "todos-list-with-node",
+  "version": "1.0.0",
+  "description": "todos list with node and express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gourav-99/todos-list-with-node.git"
+  },
+  "author": "gourav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gourav-99/todos-list-with-node/issues"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "local-storage": "^2.0.0",
+    "uuid": "^9.0.0"
+  },
+  "homepage": "https://github.com/Gourav-99/todos-list-with-node#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
