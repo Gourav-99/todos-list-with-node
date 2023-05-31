@@ -23,8 +23,6 @@ app.use("/", pageRoutes);
 app.use("/api/todos", authMiddleware, todosRoutes);
 app.use("/api/auth", authRoutes);
 
-// todos endpoints
-
 app.get("/logout", (req, res) => {
   res.clearCookie("access_token");
   return res.redirect("/login");
