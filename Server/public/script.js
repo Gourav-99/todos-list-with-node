@@ -8,7 +8,7 @@ let lastUpdated = new Date().toLocaleString();
 let updateElementId = null;
 const axiosInstance = axios.create({
   baseURL:
-    "https://b5d5-2409-40d4-107b-59eb-6c47-bc22-7c02-5d78.ngrok-free.app",
+    "https://9dee-2409-40d4-1008-419a-3e66-ea7e-7526-de48.ngrok-free.app",
   headers: { "ngrok-skip-browser-warning": 12345 },
 });
 
@@ -119,7 +119,7 @@ const listItemIncomplete = (
 
 const getData = async () => {
   try {
-    const res = await axiosInstance.get("/todos");
+    const res = await axiosInstance.get("/api/todos");
     const { todos } = res.data;
     renderList(todos);
   } catch (error) {
@@ -138,7 +138,7 @@ const handleAdd = async (e) => {
   try {
     const itemToAdd = input.value;
     if (itemToAdd !== null && itemToAdd !== "") {
-      const res = await axiosInstance.post("/todos", {
+      const res = await axiosInstance.post("/api/todos", {
         title: itemToAdd,
       });
       input.value = "";
@@ -155,7 +155,7 @@ const handleAdd = async (e) => {
 const handleDelete = async (todoElement, id) => {
   try {
     // update the database first
-    const res = await axiosInstance.delete(`/todos/${id}`);
+    const res = await axiosInstance.delete(`/api/todos/${id}`);
     console.log(res);
     // delete element from the DOM
     todoElement.remove();
@@ -169,7 +169,7 @@ const handleDelete = async (todoElement, id) => {
 const handleEdit = async (id, todo) => {
   try {
     // update the database first
-    const res = await axiosInstance.patch(`/todos/${id}`, {
+    const res = await axiosInstance.patch(`/api/todos/${id}`, {
       isComplete: todo.isComplete == true ? false : true,
     });
     getData();
@@ -180,7 +180,7 @@ const handleEdit = async (id, todo) => {
 };
 const handleUpdate = async (newTitle, id) => {
   try {
-    const res = await axiosInstance.patch(`/todos/${id}`, {
+    const res = await axiosInstance.patch(`/api/todos/${id}`, {
       title: newTitle,
     });
     getData();
